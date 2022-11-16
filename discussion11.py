@@ -62,13 +62,18 @@ def add_pets_from_json(filename, cur, conn):
     json_data = json.loads(file_data)
 
     # THE REST IS UP TO YOU
-    pass
+    for x in json_data:
+        cur.execute('SELECT id FROM Species WHERE title =?', (x['species'],))
+    conn.commit()
 
 
 # TASK 3
 # CODE TO OUTPUT NON-AGGRESSIVE PETS
 def non_aggressive_pets(aggressiveness, cur, conn):
-    pass
+    tup_lst = []
+    cur.execute('SELECT name from Patients WHERE aggressiveness <= 10', tup_lst.append())
+    conn.commit()
+
 
 
 
